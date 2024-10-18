@@ -1,60 +1,199 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2487.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinical Staging Calculator Based </title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f8fc;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            transform: scale(0.67);
+            justify-content: center;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 28px;
+        }
+        h2 {
+            margin-top: 40px;
+        }
+        select, input {
+            padding: 10px;
+            margin: 10px 0;
+            width: calc(90%);
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            background-color: #f1f9ff;
+        }
+        .grey-box {
+            border: 2px solid grey;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+    </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;Basic Addition Calculator&lt;/title&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: Arial, sans-serif;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin: 50px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>input {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 30px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin: 10px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 16px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>button {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 40px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 18px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Simple Addition Calculator&lt;/h1&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;input type="number" id="num1" placeholder="Number 1"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;input type="number" id="num2" placeholder="Number 2"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;br&gt;&lt;br&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button onclick="addNumbers()"&gt;Add&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p id="result"&gt;&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function addNumbers() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>var num1 = parseFloat(document.getElementById('num1').value);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>var num2 = parseFloat(document.getElementById('num2').value);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>var sum = num1 + num2;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('result').innerHTML = 'Sum: ' + sum;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+
+    <!-- Clinical Staging -->
+    <div class="container">
+        <h1>Clinical Staging Calculator (NCCN Guidelines Version 3.2024 for Mycosis Fungoides/Sezary Syndrome)</h1>
+
+        <div>
+            <h3>Tumor (T) Classification</h3>
+            <select id="tumor">
+                <option value="T1">T1: Patches, plaques &lt;10% BSA</option>
+                <option value="T2">T2: Patches, plaques ≥10% BSA</option>
+                <option value="T3">T3: Tumor, ≥1 lesion &gt;1 cm</option>
+                <option value="T4">T4: Erythroderma ≥80% BSA</option>
+            </select>
+        </div>
+
+        <div>
+            <h3>Node (N) Classification</h3>
+            <select id="nodes">
+                <option value="N0">N0: No lymph node involvement</option>
+                <option value="N1">N1: Low burden, no evidence of gross disease</option>
+                <option value="N2">N2: High burden, nodes involved</option>
+                <option value="N3">N3: Complete node involvement</option>
+            </select>
+        </div>
+
+        <div>
+            <h3>Metastasis (M) Classification</h3>
+            <select id="metastasis">
+                <option value="M0">M0: No visceral involvement</option>
+                <option value="M1a">M1a: Non-clone positive visceral involvement</option>
+                <option value="M1b">M1b: Clone-positive visceral involvement</option>
+            </select>
+        </div>
+
+        <div>
+            <h3>Blood Involvement (B) Classification</h3>
+            <select id="blood">
+                <option value="B0">B0: No blood involvement (≤250/μL)</option>
+                <option value="B1">B1: Intermediate blood tumor burden (251-999/μL)</option>
+                <option value="B2">B2: High blood tumor burden (≥1000/μL)</option>
+            </select>
+        </div>
+
+        <button onclick="calculateStage()">Calculate Clinical Stage & Treatment</button>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <!-- Blood Tumor Burden Calculator -->
+    <div class="container grey-box">
+        <h2>Blood Tumor Burden Calculator</h2>
+        <p>Enter Absolute Lymphocyte Count (ALC) and the percentages below:</p>
+        <input type="number" id="alc" placeholder="Absolute Lymphocyte Count (cells/μL)" />
+        <input type="number" id="cd7PlusCd26Minus" placeholder="%CD7+/CD26-" />
+        <input type="number" id="cd7MinusCd26Plus" placeholder="%CD7-/CD26+" />
+        <input type="number" id="cd7MinusCd26Minus" placeholder="%CD7-/CD26-" />
+        <button onclick="calculateTumorBurden()">Calculate Blood Tumor Burden</button>
+
+        <div id="tumorResult" class="result"></div>
+    </div>
+
+    <script>
+        function calculateStage() {
+            var tumor = document.getElementById("tumor").value;
+            var nodes = document.getElementById("nodes").value;
+            var metastasis = document.getElementById("metastasis").value;
+            var blood = document.getElementById("blood").value;
+            var stage = "";
+            var treatment = "";
+
+            // Clinical staging based on the TNM+B classification
+            if (tumor === "T1" && nodes === "N0" && metastasis === "M0" && (blood === "B0" || blood === "B1")) {
+                stage = "Stage IA: Limited skin involvement (T1, N0, M0, B0 or B1)";
+                treatment = "Skin-directed therapies such as topical steroids, phototherapy (PUVA), or topical retinoids.";
+            } else if (tumor === "T2" && nodes === "N0" && metastasis === "M0" && (blood === "B0" || blood === "B1")) {
+                stage = "Stage IB: Skin-only disease (T2, N0, M0, B0 or B1)";
+                treatment = "Skin-directed therapies and possibly systemic therapies.";
+            } else if ((tumor === "T1" || tumor === "T2") && (nodes === "N1" || nodes === "N2") && metastasis === "M0" && (blood === "B0" || blood === "B1")) {
+                stage = "Stage IIA: (T1-2, N1-2, M0, B0 or B1)";
+                treatment = "Skin-directed therapies with consideration of systemic treatments based on nodal involvement.";
+            } else if (tumor === "T3" && (nodes === "N0" || nodes === "N1" || nodes === "N2") && metastasis === "M0" && (blood === "B0" || blood === "B1")) {
+                stage = "Stage IIB: Tumor stage disease (T3, N0-2, M0, B0 or B1)";
+                treatment = "Systemic therapies including interferons, bexarotene, or clinical trials.";
+            } else if (tumor === "T4" && (nodes === "N0" || nodes === "N1" || nodes === "N2") && metastasis === "M0" && blood === "B0") {
+                stage = "Stage IIIA: Erythrodermic disease (T4, N0-2, M0, B0)";
+                treatment = "Systemic therapies and skin-directed therapies.";
+            } else if (tumor === "T4" && (nodes === "N0" || nodes === "N1" || nodes === "N2") && metastasis === "M0" && blood === "B1") {
+                stage = "Stage IIIB: Erythrodermic disease (T4, N0-2, M0, B1)";
+                treatment = "Systemic therapies such as photopheresis, interferons, or clinical trials.";
+            } else if ((tumor === "T1" || tumor === "T2" || tumor === "T3" || tumor === "T4") && (nodes === "N0" || nodes === "N1" || nodes === "N2") && metastasis === "M0" && blood === "B2") {
+                stage = "Stage IVA1: Sézary syndrome (T1-4, N0-2, M0, B2)";
+                treatment = "Aggressive systemic therapies such as histone deacetylase inhibitors, chemotherapy, and clinical trials.";
+            } else if ((tumor === "T1" || tumor === "T2" || tumor === "T3" || tumor === "T4") && nodes === "N3" && metastasis === "M0" && (blood === "B0" || blood === "B1" || blood === "B2")) {
+                stage = "Stage IVA2: Sézary syndrome or Non-Sézary (T1-4, N3, M0, B0 or B1 or B2)";
+                treatment = "Advanced systemic therapies such as targeted therapies (e.g., mogamulizumab), chemotherapy, or clinical trials.";
+            } else if ((tumor === "T1" || tumor === "T2" || tumor === "T3" || tumor === "T4") && (nodes === "N0" || nodes === "N1" || nodes === "N2" || nodes === "N3") && (metastasis === "M1a" || metastasis === "M1b") && (blood === "B0" || blood === "B1" || blood === "B2")) {
+                stage = "Stage IVB: Visceral disease (T1-4, N0-3, M1a or M1b, B0 or B1 or B2)";
+                treatment = "Aggressive systemic therapies, including multi-agent chemotherapy, total skin electron beam therapy, or palliative care.";
+            }
+
+            // Display the result
+            document.getElementById("result").innerHTML = "<strong>Clinical Stage:</strong> " + stage + "<br><strong>Treatment:</strong> " + treatment;
+        }
+
+        function calculateTumorBurden() {
+            var alc = parseFloat(document.getElementById("alc").value);
+            var cd7PlusCd26Minus = parseFloat(document.getElementById("cd7PlusCd26Minus").value);
+            var cd7MinusCd26Plus = parseFloat(document.getElementById("cd7MinusCd26Plus").value);
+            var cd7MinusCd26Minus = parseFloat(document.getElementById("cd7MinusCd26Minus").value);
+            var totalPercentage = cd7PlusCd26Minus + cd7MinusCd26Plus + cd7MinusCd26Minus;
+            var tumorBurden = alc * 1000 * (totalPercentage / 100);
+            var bloodStage = "";
+
+            if (tumorBurden <= 250) {
+                bloodStage = "B0: No blood involvement (≤250/μL)";
+            } else if (tumorBurden >= 251 && tumorBurden <= 999) {
+                bloodStage = "B1: Intermediate blood tumor burden (251-999/μL)";
+            } else if (tumorBurden >= 1000) {
+                bloodStage = "B2: High blood tumor burden (≥1000/μL)";
+            }
+
+            document.getElementById("tumorResult").innerHTML = "<strong>Blood Tumor Burden:</strong> " + tumorBurden + " cells/μL<br><strong>Blood Stage:</strong> " + bloodStage;
+        }
+    </script>
+
 </body>
 </html>
